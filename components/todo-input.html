@@ -25,7 +25,6 @@
                     if (!value) {
                         return;
                     }
-
                     var evt = new CustomEvent('commit', {
                         detail: {
                             value: value
@@ -45,9 +44,6 @@
                         commit(this.value);
                     }
                 }, false);
-            },
-            getValue: function() {
-
             }
         });
     </script>
