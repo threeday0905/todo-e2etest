@@ -6,11 +6,9 @@
 
         <link rel="stylesheet" href="//g.alicdn.com/crm/flipper/0.5.4/vendor/bootstrap/css/bootstrap.css">
         <script src="//g.alicdn.com/crm/flipper/0.5.4/vendor/jquery/jquery.js"></script>
-        <script src="//127.1:4001/build/flipper-xtpl-debug.js"></script>
-
-        <link rel="stylesheet" href="./components/compiled.css">
-        <script src="./components/polyfill.js"></script>
-        <script src="./components/compiled.js"></script>
+        <script src="//g.alicdn.com/crm/flipper/0.5.4/flipper-xtpl-debug.js"></script>
+        <link rel="import" href="./components/todo-input.html">
+        <link rel="import" href="./components/todo-list.html">
     </head>
     <body>
         <style>
@@ -34,7 +32,7 @@
         <script>
         document.getElementById('input').addEventListener('commit', function(ev) {
             document.getElementById('list').push(ev.detail.value);
-        }, false);
+        });
         </script>
     </body>
 </html>
