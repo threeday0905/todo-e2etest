@@ -1,0 +1,39 @@
+<web-component name="todo-list" template-engine="xtpl">
+    <style>
+        todo-list {
+            display: block;
+        }
+    </style>
+
+    <script type="template">
+        {{#if (this && this.length) }}
+            <ul class="list-group">
+                {{#each (this) }}
+                    <li class="list-group-item">
+                        <span class="badge">{{xindex + 1}}</span>
+                        {{this}}
+                    </li>
+                {{/each}}
+            </ul>
+        {{else}}
+            <div class="alert alert-success">
+                <strong>Congrats</strong>, your queue is empty
+            </div>
+        {{/if}}
+    </script>
+
+    <script>
+        Flipper.register({
+            fetch : function() {
+                return []; /* returning item will assign to this.model */
+            },
+            push: function(text) {
+                this.model.push(text);
+                this.refresh();
+            },
+            ready: function() {
+
+            }
+        });
+    </script>
+</web-component>

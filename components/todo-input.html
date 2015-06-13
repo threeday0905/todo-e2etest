@@ -1,0 +1,54 @@
+<web-component name="todo-input">
+    <style>
+        todo-input {
+            display: block;
+        }
+    </style>
+
+    <template>
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="I want to ....">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Do it!</button>
+            </span>
+        </div>
+    </template>
+
+    <script>
+        Flipper.register({
+            ready: function() {
+                var root = this;
+
+                var ENTER_KEY = 13;
+
+                function commit(value) {
+                    if (!value) {
+                        return;
+                    }
+
+                    var evt = new CustomEvent('commit', {
+                        detail: {
+                            value: value
+                        }
+                    });
+
+                    root.dispatchEvent(evt);
+                    root.querySelector('.form-control').value = '';
+                }
+
+                this.querySelector('.btn').addEventListener('click', function() {
+                    commit(root.querySelector('.form-control').value);
+                }, false);
+
+                this.querySelector('.form-control').addEventListener('keyup', function(ev) {
+                    if (ev.keyCode === ENTER_KEY) {
+                        commit(this.value);
+                    }
+                }, false);
+            },
+            getValue: function() {
+
+            }
+        });
+    </script>
+</web-component>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Todo - E2E Test</title>
+
+        <link rel="stylesheet" href="//g.alicdn.com/crm/flipper/0.5.4/vendor/bootstrap/css/bootstrap.css">
+        <script src="//g.alicdn.com/crm/flipper/0.5.4/vendor/jquery/jquery.js"></script>
+        <script src="//g.alicdn.com/crm/flipper/0.5.4/flipper-xtpl.js"></script>
+        <link rel="import" href="./components/todo-input.html">
+        <link rel="import" href="./components/todo-list.html">
+    </head>
+    <body>
+        <style>
+            .todolist {
+                width: 600px;
+                margin: 0 auto;
+            }
+        </style>
+
+        <div class="panel panel-info todolist">
+            <div class="panel-heading">
+                <h3 class="panel-title">ToDoList</h3>
+            </div>
+
+            <div class="panel-body">
+                <todo-input id="input"></todo-input>
+                <todo-list id="list"></todo-list>
+            </div>
+        </div>
+
+        <script>
+        document.getElementById('input').addEventListener('commit', function(ev) {
+            document.getElementById('list').push(ev.detail.value);
+        });
+        </script>
+
+    </body>
+</html>
