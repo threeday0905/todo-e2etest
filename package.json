@@ -4,7 +4,7 @@
   "description": "Helping you select e2e-test framework. Included xxxx",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "casperjs": "casperjs --log-level=debug test examples/casperjs/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/threeday0905/todo-e2etest/issues"
   },
-  "homepage": "https://github.com/threeday0905/todo-e2etest"
+  "homepage": "https://github.com/threeday0905/todo-e2etest",
+  "dependencies": {
+    "casperjs": "^1.1.0-beta3"
+  }
 }
