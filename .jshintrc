@@ -19,7 +19,7 @@
   "plusplus"      : true,
   "undef"         : true,
   "unused"        : true,
-  "strict"        : true,
+  "strict"        : false,
   "trailing"      : true,
 
   "asi"           : false,
@@ -63,12 +63,15 @@
   "maxdepth"      : 6,
   "maxstatements" : 18,
   "maxcomplexity" : 20,
-  "maxlen"        : 87,
+  "maxlen"        : 100,
 
   "globals": {
     "console"    : false,
+    "JSON"       : false,
 
-    "KISSY"      : false,
+    "Flipper"    : false,
+
+    "casper"     : false,
     "define"     : false,
     "require"    : false,
     "module"     : false,
